@@ -11,12 +11,16 @@
   </head>
   <body>
     <div id="tswcontainer">
-      <div id="tswheader">
-        <!-- start of header section: insert your logo, etc, here -->
-        <p> Placeholder content for your header section. Replace it with your
-          website's logo or name or page title or whatever. </p>
-        <p>&nbsp;</p>
-        <!-- end of header section: insert your logo, etc, above this line --> </div>
+      <div id="tswheader"></div>
+      <script>
+        // Load header content from external file
+        fetch('../header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswheader').innerHTML = data;
+          })
+          .catch(error => console.error('Header failed to load:', error));
+      </script>
       <div id="tswcontent">
         <div id="tswcontproper">
           <h1>Publications</h1>
@@ -30,6 +34,8 @@
             If you want to get a copy of the other publications for research purposes, please feel free to contact me via the button &#9993; behind the corresponding publication.
             The bibtex entries of the corresponding papers can be copied to the clipboard via the buttons labeled "bib entry".
           </p>
+          <br>
+          <button onclick="location.href='#2018'">2018</button><button onclick="location.href='#2019'">2019</button><button onclick="location.href='#2020'">2020</button><button onclick="location.href='#2021'">2021</button><button onclick="location.href='#2022'">2022</button><button onclick="location.href='#2023'">2023</button><button onclick="location.href='#2024'">2024</button>
           <style>
             ol[reversed] li {
               margin-bottom: 20px; /* increase space */
@@ -43,6 +49,7 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Banks2025,\n   title = {Solvent Isotope Effects in Protein Adsorption and Crystallization},\n   ISSN = {1528-7505},\n   url = {http://dx.doi.org/10.1021/acs.cgd.5c00116},\n   DOI = {10.1021/acs.cgd.5c00116},\n   journal = {Crystal Growth &amp; Design},\n   publisher = {American Chemical Society (ACS)},\n   author = {Banks,  Hadra and Beck,  Christian and Buchholz,  Cara and Christmann,  Simon and Surfaro,  Furio and Gerlach,  Alexander and Schreiber,  Frank},\n   year = {2025},\n   month = jun \n }')">Bib Entry</button>
             </li>
             <li><b>A multiscale in situ time-resolved study of the nano- to millisecond structural dynamics during protein crystallization</b><br>
                 Christian Beck, Ilaria Mosca, Laura M. Miñarro, Benedikt Sohmen, Cara Buchholz, Ralph Maier, Lara Franziska Reichart, Anna Carlotta Grundel, Famke Bäuerle, Roody Nasro, Hadra Banks, Simon Christmann, Kai-Florian Pastryk, Bela Farago, Orsolya Czakkel, Sylvain Prévost, Alexander Gerlach, Marco Grimaldo, Felix Roosen-Runge, Olga Matsarskaia, Frank Schreiber, Tilo Seydel <br>
@@ -51,13 +58,15 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Beck2025,\n   title = {A multiscale in situ time-resolved study of the nano- to millisecond structural dynamics during protein crystallization},\n   volume = {58},\n   ISSN = {1600-5767},\n   url = {http://dx.doi.org/10.1107/S160057672500353X},\n   DOI = {10.1107/s160057672500353x},\n   number = {3},\n   journal = {Journal of Applied Crystallography},\n   publisher = {International Union of Crystallography (IUCr)},\n   author = {Beck,  Christian and Mosca,  Ilaria and Miñarro,  Laura M. and Sohmen,  Benedikt and Buchholz,  Cara and Maier,  Ralph and Reichart,  Lara Franziska and Grundel,  Anna Carlotta and Bäuerle,  Famke and Nasro,  Roody and Banks,  Hadra and Christmann,  Simon and Pastryk,  Kai-Florian and Farago,  Bela and Czakkel,  Orsolya and Prévost,  Sylvain and Gerlach,  Alexander and Grimaldo,  Marco and Roosen-Runge,  Felix and Matsarskaia,  Olga and Schreiber,  Frank and Seydel,  Tilo},\n   year = {2025},\n   month = may,\n   pages = {845–858}\n }')">Bib Entry</button>
             </li>
-            <li><b>Continuity of Short-Time Dynamics Crossing the Liquid–Liquid Phase Separation in Charge-Tuned Protein Solutions</b><br>
+            <li id="2024"><b>Continuity of Short-Time Dynamics Crossing the Liquid–Liquid Phase Separation in Charge-Tuned Protein Solutions</b><br>
               Ilaria Mosca, Christian Beck, Niina H. Jalarvo, Olga Matsarskaia, Felix Roosen-Runge, Frank Schreiber, Tilo Seydel<br>
               J. Phys. Chem. Lett. 2024, 15, 48, 12051–12059<br>
               <a href="https://doi.org/10.1021/acs.jpclett.4c02533" target="_blank">DOI: 10.1021/acs.jpclett.4c02533</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1021/acs.jpclett.4c02533'">
                 &#9993;
               </button>
+              <button onclick="copyText('@article{Mosca2024,\n   title = {Continuity of Short-Time Dynamics Crossing the Liquid–Liquid Phase Separation in Charge-Tuned Protein Solutions},\n   volume = {15},\n   ISSN = {1948-7185},\n   url = {http://dx.doi.org/10.1021/acs.jpclett.4c02533},\n   DOI = {10.1021/acs.jpclett.4c02533},\n   number = {48},\n   journal = {The Journal of Physical Chemistry Letters},\n   publisher = {American Chemical Society (ACS)},\n   author = {Mosca,  Ilaria and Beck,  Christian and Jalarvo,  Niina H. and Matsarskaia,  Olga and Roosen-Runge,  Felix and Schreiber,  Frank and Seydel,  Tilo},\n   year = {2024},\n   month = nov,\n   pages = {12051–12059}\n }')">Bib Entry</button>
             </li>
             <li><b>Accessing self-diffusion on nanosecond time and nanometre length scales with minute kinetic resolution</b><br>
                  Christian Beck, Felix Roosen-Runge, Marco Grimaldo, Dominik Zeller, Judith Peters, Frank Schreiber and Tilo Seydel <br>
@@ -66,14 +75,16 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Beck2024,\n   title = {Accessing self-diffusion on nanosecond time and nanometre length scales with minute kinetic resolution},\n   volume = {57},\n   ISSN = {1600-5767},\n   url = {http://dx.doi.org/10.1107/S1600576724003820},\n   DOI = {10.1107/s1600576724003820},\n   number = {4},\n   journal = {Journal of Applied Crystallography},\n   publisher = {International Union of Crystallography (IUCr)},\n   author = {Beck,  Christian and Roosen-Runge,  Felix and Grimaldo,  Marco and Zeller,  Dominik and Peters,  Judith and Schreiber,  Frank and Seydel,  Tilo},\n   year = {2024},\n   month = jun,\n   pages = {912–924}\n }')">Bib Entry</button>
             </li>
-            <li><b>The Onset of Molecule-Spanning Dynamics in Heat Shock Protein Hsp90</b><br>
+            <li id="2023"><b>The Onset of Molecule-Spanning Dynamics in Heat Shock Protein Hsp90</b><br>
                 Benedikt Sohmen, Christian Beck, Veronika Frank, Tilo Seydel, Ingo Hoffmann, Bianca Hermann, Mark Nüesch, Marco Grimaldo, Frank Schreiber, Steffen Wolf, Felix Roosen-Runge, Thorsten Hugel<br>
                 Adv. Sci. 2023, 10, 2304262<br>
               <a href="https://doi.org/10.1002/advs.202304262" target="_blank">DOI: 10.1002/advs.202304262</a> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Sohmen2023,\n   title = {The Onset of Molecule‐Spanning Dynamics in Heat Shock Protein Hsp90},\n   volume = {10},\n   ISSN = {2198-3844},\n   url = {http://dx.doi.org/10.1002/advs.202304262},\n   DOI = {10.1002/advs.202304262},\n   number = {36},\n   journal = {Advanced Science},\n   publisher = {Wiley},\n   author = {Sohmen,  Benedikt and Beck,  Christian and Frank,  Veronika and Seydel,  Tilo and Hoffmann,  Ingo and Hermann,  Bianca and Nüesch,  Mark and Grimaldo,  Marco and Schreiber,  Frank and Wolf,  Steffen and Roosen‐Runge,  Felix and Hugel,  Thorsten},\n   year = {2023},\n   month = nov \n }')">Bib Entry</button>
             </li>
             <li><b>Biophysical Determinants for the Viscosity of Concentrated Monoclonal Antibody Solutions</b><br>
               Ilaria Mosca, Kévin Pounot, Christian Beck, Louise Colin, Olga Matsarskaia, Christoph Grapentin, Tilo Seydel, Frank Schreiber<br>
@@ -81,6 +92,7 @@
               <a href="https://doi.org/10.1021/acs.molpharmaceut.3c00440" target="_blank">DOI: 10.1021/acs.molpharmaceut.3c00440</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1021/acs.molpharmaceut.3c00440'">
                 &#9993;
               </button>
+              <button onclick="copyText('@article{Mosca2023,\n   title = {Biophysical Determinants for the Viscosity of Concentrated Monoclonal Antibody Solutions},\n   volume = {20},\n   ISSN = {1543-8392},\n   url = {http://dx.doi.org/10.1021/acs.molpharmaceut.3c00440},\n   DOI = {10.1021/acs.molpharmaceut.3c00440},\n   number = {9},\n   journal = {Molecular Pharmaceutics},\n   publisher = {American Chemical Society (ACS)},\n   author = {Mosca,  Ilaria and Pounot,  Kévin and Beck,  Christian and Colin,  Louise and Matsarskaia,  Olga and Grapentin,  Christoph and Seydel,  Tilo and Schreiber,  Frank},\n   year = {2023},\n   month = aug,\n   pages = {4698–4713}\n }')">Bib Entry</button>
             </li>
             <li><b>Diffusive Dynamics of Bacterial Proteome as a Proxy of Cell Death</b><br>
                 Daniele Di Bari, Stepan Timr, Marianne Guiral, Marie-Thérèse Giudici-Orticoni, Tilo Seydel, Christian Beck, Caterina Petrillo, Philippe Derreumaux, Simone Melchionna, Fabio Sterpone, Judith Peters, Alessandro Paciaroni<br>
@@ -89,14 +101,16 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{DiBari2023,\n   title = {Diffusive Dynamics of Bacterial Proteome as a Proxy of Cell Death},\n   volume = {9},\n   ISSN = {2374-7951},\n   url = {http://dx.doi.org/10.1021/acscentsci.2c01078},\n   DOI = {10.1021/acscentsci.2c01078},\n   number = {1},\n   journal = {ACS Central Science},\n   publisher = {American Chemical Society (ACS)},\n   author = {Di Bari,  Daniele and Timr,  Stepan and Guiral,  Marianne and Giudici-Orticoni,  Marie-Thérèse and Seydel,  Tilo and Beck,  Christian and Petrillo,  Caterina and Derreumaux,  Philippe and Melchionna,  Simone and Sterpone,  Fabio and Peters,  Judith and Paciaroni,  Alessandro},\n   year = {2023},\n   month = jan,\n   pages = {93–102}\n }')">Bib Entry</button>
             </li>
-              <li><b>Notes on Fitting and Analysis Frameworks for QENS Spectra of (Soft) Colloid Suspensions</b><br>
+              <li id="2022"><b>Notes on Fitting and Analysis Frameworks for QENS Spectra of (Soft) Colloid Suspensions</b><br>
                 Christian Beck, Kevin Pounot, Ilaria Mosca, Niina H Jalarvo, Felix Roosen-Runge, Frank Schreiber, Tilo Seydel<br>
                 EPJ Web of Conferences 272, 01004 (2022)<br>
                 <a href="https://doi.org/10.1051/epjconf/202227201004" target="_blank">DOI: 10.1051/epjconf/202227201004</a> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Beck2022,\n   title = {Notes on Fitting and Analysis Frameworks for QENS Spectra of (Soft) Colloid Suspensions},\n   volume = {272},\n   ISSN = {2100-014X},\n   url = {http://dx.doi.org/10.1051/epjconf/202227201004},\n   DOI = {10.1051/epjconf/202227201004},\n   journal = {EPJ Web of Conferences},\n   publisher = {EDP Sciences},\n   author = {Beck,  Christian and Pounot,  Kevin and Mosca,  Ilaria and H Jalarvo,  Niina and Roosen-Runge,  Felix and Schreiber,  Frank and Seydel,  Tilo},\n   editor = {Arbe,  A. and Colmenero,  J.},\n   year = {2022},\n   pages = {01004}\n }')">Bib Entry</button>
             </li>
             <li><b>Short-Time Transport Properties of Bidisperse Suspensions of Immunoglobulins and Serum Albumins Consistent with a Colloid Physics Picture</b><br>
                 Christian Beck, Marco Grimaldo, Hender Lopez, Stefano Da Vela, Benedikt Sohmen, Fajun Zhang, Martin Oettel, Jean-Louis Barrat, Felix Roosen-Runge, Frank Schreiber, Tilo Seydel<br>
@@ -105,6 +119,7 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Beck2022,\n   title = {Short-Time Transport Properties of Bidisperse Suspensions of Immunoglobulins and Serum Albumins Consistent with a Colloid Physics Picture},\n   volume = {126},\n   ISSN = {1520-5207},\n   url = {http://dx.doi.org/10.1021/acs.jpcb.2c02380},\n   DOI = {10.1021/acs.jpcb.2c02380},\n   number = {38},\n   journal = {The Journal of Physical Chemistry B},\n   publisher = {American Chemical Society (ACS)},\n   author = {Beck,  Christian and Grimaldo,  Marco and Lopez,  Hender and Da Vela,  Stefano and Sohmen,  Benedikt and Zhang,  Fajun and Oettel,  Martin and Barrat,  Jean-Louis and Roosen-Runge,  Felix and Schreiber,  Frank and Seydel,  Tilo},\n   year = {2022},\n   month = sep,\n   pages = {7400–7408}\n }')">Bib Entry</button>
             </li>
             <li><b>High-Resolution Neutron Spectroscopy to Study Picosecond-Nanosecond Dynamics of Proteins and Hydration Water</b><br>
               Kevin Pounot, Markus Appel, Christian Beck, Martin Weik, Giorgio Schirò, Yann Fichou, Tilo Seydel, Frank Schreiber<br>
@@ -112,13 +127,15 @@
               <a href="https://dx.doi.org/10.3791/63664" target="_blank">DOI: 10.3791/63664</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.3791/63664'">
                 &#9993;
               </button>
+              <button onclick="copyText('@article{Pounot2022,\n   title = {High-resolution Neutron Spectroscopy to Study Picosecond-nanosecond Dynamics of Proteins and Hydration Water},\n   ISSN = {1940-087X},\n   url = {http://dx.doi.org/10.3791/63664},\n   DOI = {10.3791/63664},\n   number = {182},\n   journal = {Journal of Visualized Experiments},\n   publisher = {MyJove Corporation},\n   author = {Pounot,  Kevin and Appel,  Markus and Beck,  Christian and Weik,  Martin and Schirò,  Giorgio and Fichou,  Yann and Seydel,  Tilo and Schreiber,  Frank},\n   year = {2022},\n   month = apr \n }')">Bib Entry</button>
             </li>
-            <li><b>Dynamics of Apolipoprotein B-100 in Interaction with Detergent Probed by Incoherent Neutron Scattering</b><br>
+            <li id="2021"><b>Dynamics of Apolipoprotein B-100 in Interaction with Detergent Probed by Incoherent Neutron Scattering</b><br>
               Aline Cisse, Anna-Laurence Schachner-Nedherer, Markus Appel, Christian Beck, Jacques Ollivier, Gerd Leitinger, Ruth Prassl, Karin Kornmueller, Judith Peters<br>
               J. Phys. Chem. Lett. 2021, 12, 51, 12402–12410<br>
               <a href="https://doi.org/10.1021/acs.jpclett.1c03141" target="_blank">DOI: 10.1021/acs.jpclett.1c03141</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1021/acs.jpclett.1c03141'">
                 &#9993;
               </button>
+              <button onclick="copyText('@article{Cisse2021,\n   title = {Dynamics of Apolipoprotein B-100 in Interaction with Detergent Probed by Incoherent Neutron Scattering},\n   volume = {12},\n   ISSN = {1948-7185},\n   url = {http://dx.doi.org/10.1021/acs.jpclett.1c03141},\n   DOI = {10.1021/acs.jpclett.1c03141},\n   number = {51},\n   journal = {The Journal of Physical Chemistry Letters},\n   publisher = {American Chemical Society (ACS)},\n   author = {Cisse,  Aline and Schachner-Nedherer,  Anna-Laurence and Appel,  Markus and Beck,  Christian and Ollivier,  Jacques and Leitinger,  Gerd and Prassl,  Ruth and Kornmueller,  Karin and Peters,  Judith},\n   year = {2021},\n   month = dec,\n   pages = {12402–12410}\n }')">Bib Entry</button>
             </li>
             <li><b>Protein Crystallization from a Preordered Metastable Intermediate Phase Followed by Real-Time Small-Angle Neutron Scattering</b><br>
               Ralph Maier, Benedikt Sohmen, Stefano Da Vela, Olga Matsarskaia, Christian Beck, Ralf Schweins, Tilo Seydel, Fajun Zhang, Frank Schreiber<br>
@@ -126,6 +143,7 @@
               <a href="https://doi.org/10.1021/acs.cgd.1c00908" target="_blank">DOI: 10.1021/acs.cgd.1c00908</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1021/acs.cgd.1c00908'">
                 &#9993;
               </button>
+              <button onclick="copyText('@article{Maier2021,\n   title = {Protein Crystallization from a Preordered Metastable Intermediate Phase Followed by Real-Time Small-Angle Neutron Scattering},\n   volume = {21},\n   ISSN = {1528-7505},\n   url = {http://dx.doi.org/10.1021/acs.cgd.1c00908},\n   DOI = {10.1021/acs.cgd.1c00908},\n   number = {12},\n   journal = {Crystal Growth &amp; Design},\n   publisher = {American Chemical Society (ACS)},\n   author = {Maier,  Ralph and Sohmen,  Benedikt and Da Vela,  Stefano and Matsarskaia,  Olga and Beck,  Christian and Schweins,  Ralf and Seydel,  Tilo and Zhang,  Fajun and Schreiber,  Frank},\n   year = {2021},\n   month = oct,\n   pages = {6971–6980}\n }')">Bib Entry</button>
             </li>
             <li><b>Molecular Flexibility of Antibodies Preserved Even in the Dense Phase after Macroscopic Phase Separation </b><br>
                 Anita Girelli, Christian Beck, Famke Bäuerle, Olga Matsarskaia, Ralph Maier, Fajun Zhang, Baohu Wu, Christian Lang, Orsolya Czakkel, Tilo Seydel, Frank Schreiber, Felix Roosen-Runge<br>
@@ -134,6 +152,7 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Girelli2021,\n   title = {Molecular Flexibility of Antibodies Preserved Even in the Dense Phase after Macroscopic Phase Separation},\n   volume = {18},\n   ISSN = {1543-8392},\n   url = {http://dx.doi.org/10.1021/acs.molpharmaceut.1c00555},\n   DOI = {10.1021/acs.molpharmaceut.1c00555},\n   number = {11},\n   journal = {Molecular Pharmaceutics},\n   publisher = {American Chemical Society (ACS)},\n   author = {Girelli,  Anita and Beck,  Christian and Bäuerle,  Famke and Matsarskaia,  Olga and Maier,  Ralph and Zhang,  Fajun and Wu,  Baohu and Lang,  Christian and Czakkel,  Orsolya and Seydel,  Tilo and Schreiber,  Frank and Roosen-Runge,  Felix},\n   year = {2021},\n   month = oct,\n   pages = {4162–4169}\n }')">Bib Entry</button>
             </li>
             <li><b>Temperature and salt controlled tuning of protein clusters </b><br>
                 Christian Beck, Marco Grimaldo, Michal K. Braun, Lena Bühl, Olga Matsarskaia, Niina H. Jalarvo, Fajun Zhang, Felix Roosen-Runge, Frank Schreiber, Tilo Seydel<br>
@@ -142,14 +161,16 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Beck2021,\n   title = {Temperature and salt controlled tuning of protein clusters},\n   volume = {17},\n   ISSN = {1744-6848},\n   url = {http://dx.doi.org/10.1039/D1SM00418B},\n   DOI = {10.1039/d1sm00418b},\n   number = {37},\n   journal = {Soft Matter},\n   publisher = {Royal Society of Chemistry (RSC)},\n   author = {Beck,  Christian and Grimaldo,  Marco and Braun,  Michal K. and Bühl,  Lena and Matsarskaia,  Olga and Jalarvo,  Niina H. and Zhang,  Fajun and Roosen-Runge,  Felix and Schreiber,  Frank and Seydel,  Tilo},\n   year = {2021},\n   pages = {8506–8516}\n }')">Bib Entry</button>
             </li>
-            <li><b>Protein dynamics studied with neutron spectroscopy</b><br>
+            <li id="2020"><b>Protein dynamics studied with neutron spectroscopy</b><br>
                Christian Beck<br>
                Dissertation Universität Tübingen, Germany <br>
               <a href="http://dx.doi.org/10.15496/publikation-43961" target="_blank">DOI: 10.15496/publikation-43961</a> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@misc{https://doi.org/10.15496/publikation-43961,\n   doi = {10.15496/PUBLIKATION-43961},\n   url = {https://publikationen.uni-tuebingen.de/xmlui/handle/10900/102582},\n   author = {Beck,  Christian},\n   keywords = {Proteine ,  Neutron ,  Streuung ,  Aggregat ,  Thermodynamik ,  Diffusion ,  Dynamik,  004,  500,  530,  570,  ILL,  QENS,  NBS,  NSE,  proteindynamics,  diffusion,  kinetics},\n   language = {de},\n   title = {Protein dynamics studied with neutron spectroscopy},\n   publisher = {Universität Tübingen},\n   year = {2022},\n   copyright = {ubt-podok}\n }')">Bib Entry</button>
             </li>
             <li><b>Evolution of the structure and dynamics of bovine serum albumin induced by thermal denaturation </b><br>
                Olga Matsarskaia, Lena Bühl, Christian Beck, Marco Grimaldo, Ralf Schweins, Fajun Zhang, Tilo Seydel, Frank Schreiber, Felix Roosen-Runge<br>
@@ -158,14 +179,16 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Matsarskaia2020,\n   title = {Evolution of the structure and dynamics of bovine serum albumin induced by thermal denaturation}, \n   volume = {22},\n   ISSN = {1463-9084},\n   url = {http://dx.doi.org/10.1039/D0CP01857K},\n   DOI = {10.1039/d0cp01857k}, \n   number = {33},\n   journal = {Physical Chemistry Chemical Physics},\n   publisher = {Royal Society of Chemistry (RSC)},\n   author = {Matsarskaia,  Olga and Bühl,  Lena and Beck,  Christian and Grimaldo,  Marco and Schweins,  Ralf and Zhang,  Fajun and Seydel,  Tilo and Schreiber,  Frank and Roosen-Runge,  Felix},\n   year = {2020},\n   pages = {18507–18517}\n }')">Bib Entry</button>
             </li>
-            <li><b>Following Protein Dynamics in Real Time during Crystallization</b><br>
+            <li id="2019"><b>Following Protein Dynamics in Real Time during Crystallization</b><br>
               Christian Beck, Marco Grimaldo, Felix Roosen-Runge, Ralph Maier, Olga Matsarskaia, Michal Braun, Benedikt Sohmen, Orsolya Czakkel, Ralf Schweins, Fajun Zhang, Tilo Seydel, Frank Schreiber<br>
               Cryst. Growth Des. 2019, 19, 12, 7036–7045<br>
               <a href="https://doi.org/10.1021/acs.cgd.9b00858" target="_blank">DOI: 10.1021/acs.cgd.9b00858</a> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Beck2019,\n   title = {Following Protein Dynamics in Real Time during Crystallization},\n   volume = {19},\n   ISSN = {1528-7505},\n   url = {http://dx.doi.org/10.1021/acs.cgd.9b00858},\n   DOI = {10.1021/acs.cgd.9b00858},\n   number = {12},\n   journal = {Crystal Growth &amp; Design},\n   publisher = {American Chemical Society (ACS)},\n   author = {Beck,  Christian and Grimaldo,  Marco and Roosen-Runge,  Felix and Maier,  Ralph and Matsarskaia,  Olga and Braun,  Michal and Sohmen,  Benedikt and Czakkel,  Orsolya and Schweins,  Ralf and Zhang,  Fajun and Seydel,  Tilo and Schreiber,  Frank},\n   year = {2019},\n   month = oct,\n   pages = {7036–7045}\n }')">Bib Entry</button>
             </li>
             <li><b>Protein Short-Time Diffusion in a Naturally Crowded Environment</b><br>
               Marco Grimaldo, Hender Lopez, Christian Beck, Felix Roosen-Runge, Martine Moulin, Juliette M. Devos, Valerie Laux, Michael Härtlein, Stefano Da Vela, Ralf Schweins, Alessandro Mariani, Fajun Zhang, Jean-Louis Barrat, Martin Oettel, V. Trevor Forsyth, Tilo Seydel, Frank Schreiber<br>
@@ -174,6 +197,7 @@
                 alt="Open Access"
                 title="Open Access"
                 style="height: 1em; vertical-align: text-bottom;">
+              <button onclick="copyText('@article{Grimaldo2019,\n   title = {Protein Short-Time Diffusion in a Naturally Crowded Environment},\n   volume = {10},\n   ISSN = {1948-7185},\n   url = {http://dx.doi.org/10.1021/acs.jpclett.9b00345},\n   DOI = {10.1021/acs.jpclett.9b00345},\n   number = {8},\n   journal = {The Journal of Physical Chemistry Letters},\n   publisher = {American Chemical Society (ACS)},\n   author = {Grimaldo,  Marco and Lopez,  Hender and Beck,  Christian and Roosen-Runge,  Felix and Moulin,  Martine and Devos,  Juliette M. and Laux,  Valerie and Härtlein,  Michael and Da Vela,  Stefano and Schweins,  Ralf and Mariani,  Alessandro and Zhang,  Fajun and Barrat,  Jean-Louis and Oettel,  Martin and Forsyth,  V. Trevor and Seydel,  Tilo and Schreiber,  Frank},\n   year = {2019},\n   month = mar,\n   pages = {1709–1715}\n }')">Bib Entry</button>
             </li>
             <li><b>Neutron spectroscopy on protein solutions employing backscattering with an increased energy range</b><br>
               Christian Beck, Markus Appel, Marco Grimaldo, Felix Roosen-Runge, Fajun Zhang, Bernhard Frick, Frank Schreiber, Tilo Seydel<br>
@@ -181,8 +205,9 @@
               <a href="https://doi.org/10.1016/j.physb.2018.11.058" target="_blank">DOI: 10.1016/j.physb.2018.11.058</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1016/j.physb.2018.11.058'">
                 &#9993;
               </button>
+              <button onclick="copyText('@article{Beck2019,\n   title = {Neutron spectroscopy on protein solutions employing backscattering with an increased energy range},\n   volume = {562},\n   ISSN = {0921-4526},\n   url = {http://dx.doi.org/10.1016/j.physb.2018.11.058},\n   DOI = {10.1016/j.physb.2018.11.058},\n   journal = {Physica B: Condensed Matter},\n   publisher = {Elsevier BV},\n   author = {Beck,  Christian and Appel,  Markus and Grimaldo,  Marco and Roosen-Runge,  Felix and Zhang,  Fajun and Frick,  Bernhard and Schreiber,  Frank and Seydel,  Tilo},\n   year = {2019},\n   month = jun,\n   pages = {31–35}\n }')">Bib Entry</button>
             </li>
-            <li><b>Nanosecond Tracer Diffusion as a Probe of the Solution Structure and Molecular Mobility of Protein Assemblies: The Case of Ovalbumin</b><br>
+            <li id="2018"><b>Nanosecond Tracer Diffusion as a Probe of the Solution Structure and Molecular Mobility of Protein Assemblies: The Case of Ovalbumin</b><br>
               Christian Beck, Marco Grimaldo, Felix Roosen-Runge, Michal K. Braun, Fajun Zhang, Frank Schreiber, Tilo Seydel<br>
               J. Phys. Chem. B 2018, 122, 35, 8343–8350<br>
               <a href="https://doi.org/10.1021/acs.jpcb.8b04349" target="_blank">DOI: 10.1021/acs.jpcb.8b04349</a> <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1021/acs.jpcb.8b04349'">
@@ -207,12 +232,16 @@
         </script>
       </div>
       <div style="clear: both;"></div>
-      <div id="tswfooter">
-        <!-- start of footer section: insert your copyright notice, etc, here -->
-        <p>© Christian Beck 2025 | All rights reserved.|Page was updated in
-          July 2025</p>
-        <!-- end of footer section: insert your copyright notice, etc, above this line -->
-      </div>
+      <div id="tswfooter"></div>
+      <script>
+        // Load footer
+        fetch('../footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswfooter').innerHTML = data;
+          })
+          .catch(error => console.error('Footer failed to load:', error));
+      </script>
     </div>
     <script>
     function copyText(text) {

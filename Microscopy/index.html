@@ -11,12 +11,16 @@
   </head>
   <body>
     <div id="tswcontainer">
-      <div id="tswheader">
-        <!-- start of header section: insert your logo, etc, here -->
-        <p> Placeholder content for your header section. Replace it with your
-          website's logo or name or page title or whatever. </p>
-        <p>&nbsp;</p>
-        <!-- end of header section: insert your logo, etc, above this line --> </div>
+      <div id="tswheader"></div>
+      <script>
+        // Load header content from external file
+        fetch('../header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswheader').innerHTML = data;
+          })
+          .catch(error => console.error('Header failed to load:', error));
+      </script>
       <div id="tswcontent">
         <div id="tswcontproper">
          <h1>Microscopy Analysis</h1>
@@ -35,12 +39,16 @@
         </script>
       </div>
       <div style="clear: both;"></div>
-      <div id="tswfooter">
-        <!-- start of footer section: insert your copyright notice, etc, here -->
-        <p>© Christian Beck 2025 | All rights reserved.|Page was updated in
-          July 2025</p>
-        <!-- end of footer section: insert your copyright notice, etc, above this line -->
-      </div>
+      <div id="tswfooter"></div>
+      <script>
+        // Load footer
+        fetch('../footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswfooter').innerHTML = data;
+          })
+          .catch(error => console.error('Footer failed to load:', error));
+      </script>
     </div>
     <script>
     function copyText(text) {

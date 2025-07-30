@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Publications of Christian Beck, PhD</title>
+    <title>CV of Christian Beck, PhD</title>
     <meta name="generator" content="thesitewizard.com's Layout Wizard 3.0.1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="all" href="../styles.css">
@@ -11,15 +11,87 @@
   </head>
   <body>
     <div id="tswcontainer">
-      <div id="tswheader">
-        <!-- start of header section: insert your logo, etc, here -->
-        <p> Placeholder content for your header section. Replace it with your
-          website's logo or name or page title or whatever. </p>
-        <p>&nbsp;</p>
-        <!-- end of header section: insert your logo, etc, above this line --> </div>
+      <div id="tswheader"></div>
+      <script>
+        // Load header content from external file
+        fetch('../header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswheader').innerHTML = data;
+          })
+          .catch(error => console.error('Header failed to load:', error));
+      </script>
       <div id="tswcontent">
         <div id="tswcontproper">
          <h1>Curriculum Vitae</h1>
+         <style>
+            table {
+              border-collapse: separate;  /* Required to use border-spacing */
+              border-spacing: 20px 10px;  /* horizontal vertical spacing */
+            }
+            td, th {
+              vertical-align: top;
+            }
+          </style>
+         <table>
+            <tr>
+              <td>starting from October 2025</td>
+              <td><b>Instrument Data Scientist</b><br>
+                permanent position<br>
+                Assigned Instruments: <a href="https://ess.eu/instruments/cspec"target="_blank">CSPEC</a> and <a href="https://ess.eu/instruments/miracles"target="_blank">MIRACLES</a><br>
+                <a href="https://ess.eu/data-management-software-centre" target="_blank">https://ess.eu/data-management-software-centre</a>
+              </td>
+            </tr>
+            <tr>
+              <td>December 2019 - September 2025</td>
+              <td><b>Post Doc</b><br>
+                time-limited contract<br>
+                Employed by  <a href="https://www.soft-matter.uni-tuebingen.de/"target="_blank">University of Tübingen, Germany</a><br>
+                Detached to <a href="http://www.ill.fr" target="_blank">ILL</a> to work on <a href="http://www.ill.fr/in16b" target="_blank">IN16b</a>
+              </td>
+            </tr>
+            <tr>
+              <td>November 2016 - November 2019</td>
+              <td><b>PhD</b><br>
+                time-limited contract<br>
+                Employed by <a href="http://www.ill.fr" target="_blank">ILL</a><br>
+                in cooperation with <a href="https://www.soft-matter.uni-tuebingen.de/"target="_blank">University of Tübingen, Germany</a>
+              </td>
+            </tr>
+            <tr>
+              <td>2011-2016</td>
+              <td><b>Bachelor and Master in Physics</b><br>
+                Student at <a href="https://www.uni-tuebingen.de/"target="_blank">University of Tübingen, Germany</a><br>
+              </td>
+            </tr>
+            <tr>
+              <td>2015 & 2016</td>
+              <td><b>Internship at the ILL</b><br>
+              </td>
+            </tr>
+            <tr>
+              <td>2012 & 2013</td>
+              <td><b>Erasmus Studies at <a href="https://www.univ-lyon1.fr/"target="_blank">Université Lyon 1, France</a></b><br>
+              </td>
+            </tr>
+            <tr>
+              <td>2013</td>
+              <td><b>Internship at <a href="https://ilm.univ-lyon1.fr/"target="_blank"> institut Lumière Matière (iLM) Université Lyon 1, France</a></b><br>
+              </td>
+            </tr>
+            <tr>
+              <td>2009-2011</td>
+              <td><b><a href="https://www.uni-stuttgart.de/studium/orientierung/fruehstudium/"target="_blank"> Early Studies</a> in Physics at the <a href="https://www.uni-stuttgart.de/"target="_blank"> University of Stuttgart, Germany</a></b><br>
+              </td>
+            </tr>
+            <tr>
+              <td>2002-2011</td>
+              <td><b>Maria von Linden-Gymnasium (Grammar School), Calw, Germany</b><br>
+              </td>
+            </tr>
+            
+          </table>
+
           <!-- end of content column: put your content above this line --> </div>
       </div>
       <div id="tswsidecol">
@@ -35,12 +107,16 @@
         </script>
       </div>
       <div style="clear: both;"></div>
-      <div id="tswfooter">
-        <!-- start of footer section: insert your copyright notice, etc, here -->
-        <p>© Christian Beck 2025 | All rights reserved.|Page was updated in
-          July 2025</p>
-        <!-- end of footer section: insert your copyright notice, etc, above this line -->
-      </div>
+      <div id="tswfooter"></div>
+      <script>
+        // Load footer
+        fetch('../footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswfooter').innerHTML = data;
+          })
+          .catch(error => console.error('Footer failed to load:', error));
+      </script>
     </div>
     <script>
     function copyText(text) {
