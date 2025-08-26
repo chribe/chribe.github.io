@@ -34,7 +34,7 @@ div#tswheader {
 /* === Fixed Sidebar === */
 div#tswsidecol {
   position: fixed;
-  top: 106px; /* Adjust to match header height */
+  top: 200px; /* Adjust to match header height */
   left: 0;
   width: 20%;
   height: calc(100% - 100px);
@@ -48,7 +48,7 @@ div#tswsidecol {
 
 /* === Main Content === */
 div#tswcontent {
-  margin-top: 100px;     /* Push content below fixed header */
+  margin-top: 200px;     /* Push content below fixed header */
   margin-left: 20%;      /* Push content to the right of sidebar */
   width: 80%;
   float: none;
