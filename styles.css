@@ -103,3 +103,74 @@ div#tswfooter {
     float: none;
   }
 }
+
+/* === horizontal line
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 2em 0;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-top: 2px dotted #000;
+  border-bottom: 2px dotted #000;
+  height: 6px; 
+}
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
+*/
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 2em 0;
+  color: #444; /* text color */
+  font-weight: bold;
+  gap: 0.75em; /* spacing between text and lines */
+  scroll-margin-top: 100px; /* height of your header */
+}
+
+/* shared line styles */
+.divider::before,
+.divider::after {
+  content: "";
+  display: block;
+  width: 10ch;     /* about 10 characters wide (≈ 10% of text width) */
+  height: 6px;     /* space for double line */
+  background-image:
+    repeating-linear-gradient(to right, black 0 4px, transparent 4px 8px),
+    repeating-linear-gradient(to right, black 0 4px, transparent 4px 8px);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 8px 2px, 8px 2px;
+  background-position: top, bottom;
+}
+
+/* left side: fade white → black */
+.divider::before {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to right, transparent, black 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+/* right side: fade black → white */
+.divider::after {
+  -webkit-mask-image: linear-gradient(to right, black, transparent);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to right, black, transparent);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
