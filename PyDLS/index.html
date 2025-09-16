@@ -23,8 +23,10 @@
       </script>
       <div id="tswcontent">
         <div id="tswcontproper">
-         <h1>PyDLS</h1>
-         <div style="height: 500px;"></div>
+        <h1>PyDLS</h1>
+        <p id="description"></p>
+        <a href="https://github.com/chribe/PyDLS" target="_blank"> Github repository</a>
+        <div style="height: 500px;"></div>
           <!-- end of content column: put your content above this line --> </div>
       </div>
       <div id="tswsidecol">
@@ -58,5 +60,49 @@
     });
     }
     </script>
+    <script>
+      const translations = {
+        en: {
+          description: `PyDLS is a software for the analysis of dynamic light scattering (DLS) data. Different models can be chosen to fit the data. The scattering data and fits can be displayed as a function of different scattering vectors q. The fit parameters can be evaluated as a function of q. The fit results are compiled as a pdf to obtain a comprehensive overview. An arbitrary number of samples can be automatically analyzed. The most recent version of the software can be obtained via:`
+        },
+        fr: {
+          description: `PyDLS est un logiciel destiné à l'analyse des données de diffusion dynamique de la lumière (DLS). Différents modèles peuvent être choisis pour ajuster les données. Les données de diffusion et les ajustements peuvent être affichés en fonction de différents vecteurs de diffusion q. Les paramètres d'ajustement peuvent être évalués en fonction de q. Les résultats d'ajustement sont compilés sous forme de fichier pdf afin d'obtenir une vue d'ensemble complète. Un nombre arbitraire d'échantillons peut être analysé automatiquement. La version la plus récente du logiciel est disponible à l'adresse suivante :`
+        },
+        es: {
+          description: `PyDLS es un software para el análisis de datos de dispersión dinámica de luz (DLS). Se pueden elegir diferentes modelos para ajustar los datos. Los datos de dispersión y los ajustes se pueden mostrar en función de diferentes vectores de dispersión q. Los parámetros de ajuste se pueden evaluar en función de q. Los resultados del ajuste se compilan en un archivo pdf para obtener una visión general completa. Se puede analizar automáticamente un número arbitrario de muestras. La versión más reciente del software se puede obtener a través de:`
+        },
+        de: {
+          description: `PyDLS ist eine Software zur Analyse von Daten der dynamischen Lichtstreuung (DLS). Zum Fitten der Daten können verschiedene Modelle ausgewählt werden. Die Streudaten und Fits  und die Fitparameter können als Funktion verschiedener Streuvektoren q angezeigt werden. Die Fitergebnisse werden als PDF-Datei zusammengestellt, um einen umfassenden Überblick zu erhalten. Eine beliebige Anzahl von Proben kann automatisch analysiert werden. Die neueste Version der Software ist erhältlich unter:`
+          }
+      };
+
+      function initLanguageSwitcher() {
+        const descEl  = document.getElementById("description");
+        const switcher = document.getElementById("languageSwitcher");
+
+        if (!descEl || !switcher) return;
+
+        function setLanguage(lang) {
+          descEl.innerHTML  = translations[lang].description;
+          localStorage.setItem("lang", lang); // remember choice
+          switcher.value = lang;
+        }
+
+        switcher.addEventListener("change", e => setLanguage(e.target.value));
+
+          // load saved language or fallback
+          const savedLang = localStorage.getItem("lang") || "en";
+          setLanguage(savedLang);
+        }
+
+        // load nav, then init
+        fetch('../nav.html')
+          .then(r => r.text())
+          .then(data => {
+            document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+            initLanguageSwitcher();
+          })
+          .catch(error => console.error('Navigation menu failed to load:', error));
+    </script>    
   </body>
 </html>

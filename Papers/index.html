@@ -23,17 +23,8 @@
       </script>
       <div id="tswcontent">
         <div id="tswcontproper">
-          <h1>Publications</h1>
-          <p>
-            This page gives a list of the contributions where I have contributed.
-            Open Access articles are marked with
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
-                alt="Open Access"
-                title="Open Access"
-                style="height: 1em; vertical-align: text-bottom;">. 
-            If you want to get a copy of the other publications for research purposes, please feel free to contact me via the button &#9993; behind the corresponding publication.
-            The bibtex entries of the corresponding papers can be copied to the clipboard via the buttons labeled "bib entry".
-          </p>
+          <h1 id="Publications"></h1>
+          <p id="description"></p>
           <br>
           <button onclick="location.href='#2015'">2015</button>
           <button onclick="location.href='#2016'">2016</button>
@@ -54,7 +45,7 @@
             <div class="divider" id="2025">2025</div>
             <li><b>Multiscale Diffusion, Dynamic Cluster Formation, and Intermolecular Interactions in Pharmaceutically Relevant Monoclonal Antibody Formulations</b><br>
               Ilaria Mosca, Christian Beck, Laura Mateo-Miñarro, Roody Nasro, Anna Carlotta Grundel, Ingo Hoffmann, Kévin Pounot, Olga Matsarskaia, Christoph Grapentin, Tilo Seydel, Frank Schreiber<br>
-              Mol. Pharmaceutics 2025<br>
+              Mol. Pharmaceutics 2025, 22, 9, 5373–5388<br>
               <a href="https://doi.org/10.1021/acs.molpharmaceut.5c00327" target="_blank">DOI: 10.1021/acs.molpharmaceut.5c00327</a>
               <button onclick="location.href='mailto:chribe_homepage@gmx.de?subject=Paper Request&body=Please send me the paper 10.1021/acs.molpharmaceut.5c00327'">
                 &#9993;
@@ -286,6 +277,75 @@
       alert("Copied: " + text);
     });
     }
+    </script>
+    <script>
+      const translations = {
+        en: {
+          Publications: "Publications",
+          description: `This page gives a list of the contributions where I have contributed. 
+        Open Access articles are marked with 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
+            alt="Open Access"
+            title="Open Access"
+            style="height: 1em; vertical-align: text-bottom;">. If you want to get a copy of the other publications for research purposes, please feel free to contact me via the button &#9993; behind the corresponding publication.
+            The bibtex entries of the corresponding papers can be copied to the clipboard via the buttons labeled "bib entry".`
+        },
+        fr: {
+          Publications: "Publications",
+          description: `Cette page présente une liste des contributions auxquelles j'ai participé. Les articles en libre accès sont signalés par la mention <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
+            alt="Open Access"
+            title="Open Access"
+            style="height: 1em; vertical-align: text-bottom;">.
+          Si vous souhaitez obtenir une copie des autres publications à des fins de recherche, n'hésitez pas à me contacter via le bouton &#9993 situé derrière la publication correspondante. Les entrées bibtex des articles correspondants peuvent être copiées dans le presse-papiers via les boutons intitulés « bib entry ».`
+        },
+        es: {
+          Publications: "Publicaciones",
+          description: `Esta página ofrece una lista de las contribuciones en las que he participado. Los artículos de acceso abierto están marcados con  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
+            alt="Open Access"
+            title="Open Access"
+            style="height: 1em; vertical-align: text-bottom;">.
+Si desea obtener una copia de las demás publicaciones con fines de investigación, no dude en ponerse en contacto conmigo a través del botón &#9993 situado detrás de la publicación correspondiente. Las entradas bibtex de los artículos correspondientes se pueden copiar al portapapeles mediante los botones etiquetados como «bib entry».`
+        },
+        de: {
+          Publications: "Veröffentlichungen",
+          description: `Diese Seite enthält eine Liste der Beiträge, an denen ich mitgewirkt habe. Open-Access-Artikel sind mit 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/800px-Lock-green.svg.png"
+            alt="Open Access"
+            title="Open Access"
+            style="height: 1em; vertical-align: text-bottom;">
+            gekennzeichnet. Wenn Sie eine Kopie der anderen Publikationen für Forschungszwecke erhalten möchten, können Sie mich gerne über die Schaltfläche &#9993 hinter der entsprechenden Publikation kontaktieren. Die BibTeX-Einträge der entsprechenden Artikel können über die Schaltflächen „bib entry” in die Zwischenablage kopiert werden.`
+          }
+      };
+
+      function initLanguageSwitcher() {
+        const PublicationsEl = document.getElementById("Publications");   // make sure your <h1> has id="title"
+        const descEl  = document.getElementById("description");
+        const switcher = document.getElementById("languageSwitcher");
+
+        if (!descEl || !switcher) return;
+
+        function setLanguage(lang) {
+          PublicationsEl.textContent  = translations[lang].Publications;
+          descEl.innerHTML  = translations[lang].description;
+          localStorage.setItem("lang", lang); // remember choice
+          switcher.value = lang;
+        }
+
+        switcher.addEventListener("change", e => setLanguage(e.target.value));
+
+          // load saved language or fallback
+          const savedLang = localStorage.getItem("lang") || "en";
+          setLanguage(savedLang);
+        }
+
+        // load nav, then init
+        fetch('../nav.html')
+          .then(r => r.text())
+          .then(data => {
+            document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+            initLanguageSwitcher();
+          })
+          .catch(error => console.error('Navigation menu failed to load:', error));
     </script>
   </body>
 </html>
