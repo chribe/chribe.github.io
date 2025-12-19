@@ -23,8 +23,28 @@
       </script>
       <div id="tswcontent">
         <div id="tswcontproper">
-         <h1>Teaching Materials</h1>
-         <div style="height: 500px;"></div>
+          <!-- start of content column: insert your content here -->
+          <h1 id="title"></h1>
+          <p id="text1"></p>
+          <p id="text2"></p>
+          <div style="height: 300px;"></div>
+          <p>&nbsp;</p>
+          <!--https://www.thesitewizard.com/bluegriffon/bluegriffon-2-tutorial-1.shtml<-->
+          <!-- If you want a navigation menu for your side column that looks like
+            the one on thesitewizard.com, you can generate your own and
+            customize it, with the <a href="https://www.thesitewizard.com/wizards/css-menu-buttons.shtml">Navigation
+              Menu Wizard</a>. It's free, just like the <a href="https://www.thesitewizard.com/wizards/layout.shtml">Layout
+              Wizard</a> that you used to create this. -->
+          
+          <!--    <p> And if you want a contact form (ie, one that your visitors can use
+            to reach you), go to the <a href="https://www.thesitewizard.com/wizards/feedbackform.shtml">Feedback
+              Form Wizard</a> to create one. Yes, it's free too. </p>
+          <p> Okay, that's it. I've run out of meaningful things to say for this
+            placeholder content, and can't be bothered to think up any more
+            stuff that you're just going to delete anyway. </p>
+          <p> All the best for your site! </p>
+          -->
+          <p>&nbsp;</p>
           <!-- end of content column: put your content above this line --> </div>
       </div>
       <div id="tswsidecol">
@@ -52,11 +72,58 @@
       </script>
     </div>
     <script>
-    function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Copied: " + text);
-    });
+    const translations = {
+      en: { title: "Teaching Materials",
+        text1:`As part of the ILL graduate school, I developed an introductory course on the LaTeX typesetting language. The course covered the following topics:`,
+        text2:`The course slides can be provided upon request.`
+      },
+      fr: { title: "Matériel Pédagogique" ,
+        text1:`Dans le cadre de l'école doctorale de l'ILL, j'ai développé un cours d'introduction au langage de composition LaTeX. Le cours couvrait les thèmes suivants`,
+        text2:`Les transparents du cours peuvent être fournis sur demande.`
+      },
+      es: { title: "Materiales Didácticos",
+        text1:`En el marco de la escuela de posgrado del ILL, he desarrollado un curso introductorio al lenguaje de composición LaTeX. El curso abarcaba los siguientes temas:`,
+        text2:`Las diapositivas del curso pueden facilitarse previa solicitud.`
+       },
+      de: { title: "Lehrmaterialien" ,
+        text1:`Im Rahmen der Graduiertenschule des ILL habe ich einen Einführungskurs in die Satzsprache LaTeX entwickelt. Der Kurs umfasste die folgenden Themen:`,
+        text2:`Die Folien des Kurses können auf Nachfrage bereitgestellt werden.`
+      }
+    };
+
+    function initLanguageSwitcher() {
+      const titleEl = document.getElementById("title");
+      const text1El = document.getElementById("text1");
+      const text2El = document.getElementById("text2");
+      const switcher = document.getElementById("languageSwitcher"); // now it exists
+
+      if (!titleEl ||!text1El||!text2El|| !switcher) return;
+
+      function setLanguage(lang) {
+        titleEl.textContent = translations[lang].title;
+        text1El.innerHTML = translations[lang].text1;
+        text2El.innerHTML = translations[lang].text2;
+        localStorage.setItem("lang", lang);
+        switcher.value = lang;
+      }
+
+      switcher.addEventListener("change", e => setLanguage(e.target.value));
+
+      // load saved language or default
+      const savedLang = localStorage.getItem("lang") || "en";
+      setLanguage(savedLang);
     }
+
+    // fetch nav first, then init
+    fetch('../nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+        initLanguageSwitcher();  // 👈 only call after nav is loaded
+      })
+      .catch(error => console.error('Navigation menu failed to load:', error));
     </script>
   </body>
 </html>
+
+
