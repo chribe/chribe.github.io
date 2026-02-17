@@ -337,3 +337,141 @@ body.dark-mode #tswcssbuttons li a {
 body.dark-mode #tswcssbuttons li a:hover {
   background-color: #3a3a3a;
 }
+
+
+/* Dark mode adjustments (optional: reduce brightness of images if needed) */
+body.dark-mode #tswheader .header-img {
+  filter: brightness(0.9);
+}
+
+/* Header grid for precise positioning */
+
+#tswheader.header-grid {
+  display: grid;
+  /* Columns match the widths of the color bands approximately */
+  grid-template-columns: 16.5% 33% 33% 17.5%;
+  align-items: center;
+  position: relative;
+  height: 100px;
+}
+
+#tswheader.header-grid img {
+  justify-self: center;  /* horizontally center image in its column */
+  align-self: center;    /* vertically center */
+  height: 80px;
+  background: transparent;
+  mix-blend-mode: normal;
+  z-index: 1;
+}
+
+#tswheader {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-image:
+    linear-gradient(to bottom, white, black, white),
+    linear-gradient(to right,
+      white 0%,
+      #A51E37 16.5%,
+      white 33%,
+      #0075a9 49.5%,
+      white 66%,
+      #00A896 83%,
+      white 100%);
+  background-blend-mode: screen;
+  overflow: hidden;
+}
+
+/* Dark mode gradient */
+body.dark-mode #tswheader {
+  background-image:
+    linear-gradient(to bottom, #000, #333, #000),
+    linear-gradient(to right,
+      #111 0%,
+      #7a1528 16.5%,
+      #111 33%,
+      #004f73 49.5%,
+      #111 66%,
+      #007a68 83%,
+      #111 100%);
+  background-blend-mode: screen;
+}
+
+/* Header images */
+#tswheader .header-img {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  max-width: 100%;
+  background: transparent;
+  mix-blend-mode: normal;
+  z-index: 1;
+  transition: filter 0.3s ease;
+}
+
+/* Optional: slightly darken images in dark mode */
+body.dark-mode #tswheader .header-img {
+  filter: brightness(0.9);
+}
+
+/* Header flex container for vertical centering */
+#tswheader.header-flex {
+  display: flex;
+  align-items: center;          /* vertically center */
+  position: relative;
+  height: 100px;                /* fixed height */
+  width: 100%;
+  background-image:
+    linear-gradient(to bottom, white, black, white),
+    linear-gradient(to right,
+      white 0%,
+      #A51E37 16.5%,
+      white 33%,
+      #0075a9 49.5%,
+      white 66%,
+      #00A896 83%,
+      white 100%);
+  background-blend-mode: screen;
+  overflow: hidden;
+}
+
+/* Dark mode gradient */
+body.dark-mode #tswheader.header-flex {
+  background-image:
+    linear-gradient(to bottom, #000, #333, #000),
+    linear-gradient(to right,
+      #111 0%,
+      #7a1528 16.5%,
+      #111 33%,
+      #004f73 49.5%,
+      #111 66%,
+      #007a68 83%,
+      #111 100%);
+}
+
+/* Images: absolute horizontal positioning, vertical centered by flex */
+#tswheader.header-flex .header-img {
+  position: absolute;
+  height: 80px;
+  background: transparent;
+  mix-blend-mode: normal;
+  z-index: 1;
+  transition: filter 0.3s ease;
+}
+
+/* Horizontal positions */
+#tswheader.header-flex .header-img.tuebingen {
+  left: 16.5%;
+}
+#tswheader.header-flex .header-img.grenoble {
+  left: 49.5%;
+}
+#tswheader.header-flex .header-img.kopenhagen {
+  left: 83%;
+}
+
+/* Dark mode image adjustments */
+body.dark-mode #tswheader.header-flex .header-img {
+  filter: brightness(0.9);
+}

@@ -1,48 +1,5 @@
-<!-- header.html -->
-<!--div style="
-  width:100%; height:100px; position:relative;
-  background-image:
-    linear-gradient(to bottom, white, black, white),             /* vertical shading */
-    linear-gradient(to right,
-      white 0%,
-      #A51E37 16.5%,  /* red stripe starts */
-      white 33%,
-      #0075a9ff 49.5%,
-      white 66%,
-      #00A896 83%,
-      white 100%);
-  background-blend-mode: screen;
-"-->
-<div id="main-header">
-  <img src="../Pictures/Tuebingenblackwhite1.png" alt="Tuebingen" style="
-    position:absolute;
-    left: calc(16.5% );  /* = 24.75%: center of red band */
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 80px;               /* adjust as needed */
-    background: transparent;    /* make sure the image itself doesn’t add a background */
-    mix-blend-mode: normal;     /* don’t let it interact with the gradient blending */
-    z-index: 1;
-  ">
-
-  <img src="../Pictures/Grenoble.png" alt="Grenoble" style="
-    position:absolute;
-    left: 50%;  /*  center of blue band */
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 80px;               /* adjust as needed */
-    background: transparent;    /* make sure the image itself doesn’t add a background */
-    mix-blend-mode: normal;     /* don’t let it interact with the gradient blending */
-    z-index: 1;
-  ">
-<img src="../Pictures/Kopenhagen.png" alt="Kopenhagen" style="
-    position:absolute;
-    left: 82.5%;  /*  center of blue band */
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 80px;               /* adjust as needed */
-    background: transparent;    /* make sure the image itself doesn’t add a background */
-    mix-blend-mode: normal;     /* don’t let it interact with the gradient blending */
-    z-index: 1;
-  ">
+<div id="tswheader" class="header-flex">
+  <img src="../Pictures/Tuebingenblackwhite1.png" alt="Tuebingen" class="header-img tuebingen">
+  <img src="../Pictures/Grenoble.png" alt="Grenoble" class="header-img grenoble">
+  <img src="../Pictures/Kopenhagen.png" alt="Kopenhagen" class="header-img kopenhagen">
 </div>
