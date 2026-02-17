@@ -487,7 +487,8 @@ body.dark-mode #tswheader.header-flex .header-img {
     left: 0;                     /* start offscreen on the left */
     transform: translateX(-100%); /* fully hidden left */
     width: 220px;                /* fixed width */
-    height: auto;                /* height determined by content */
+    max-height: calc(100vh - 200px);
+    /* height: auto;                height determined by content */
     background-color: #fff;      /* box background */
     border-radius: 0 12px 12px 0; /* rounded right corners only */
     box-shadow: 4px 0 20px rgba(0,0,0,0.3); /* shadow for depth */
