@@ -34,7 +34,7 @@ div#tswsidecol {
   position: fixed;
   top: 100px; /* Adjust to match header height */
   left: 0;
-  width: 20%;
+  width: 250px;
   height: calc(100% - 100px);
   overflow-y: auto;
   background-color: #fff;
@@ -46,9 +46,9 @@ div#tswsidecol {
 
 /* === Main Content === */
 div#tswcontent {
-  margin-top: 100px;     /* Push content below fixed header */
-  margin-left: 20%;      /* Push content to the right of sidebar */
-  width: 80%;
+  margin-top: 150px;     /* Push content below fixed header */
+  margin-left: 250px;      /* Push content to the right of sidebar */
+  width: calc(100%-250px);
   float: none;
   color: #000;
   background-color: #fff;
@@ -81,7 +81,7 @@ div#tswfooter {
   padding: 10px 0;
 }
 
-/* === Responsive Design === */
+/* === Responsive Design === 
 @media only screen and (max-width: 629px) {
   div#tswheader {
     position: static;
@@ -101,6 +101,7 @@ div#tswfooter {
     float: none;
   }
 }
+*/
 
 /* === horizontal line
 
@@ -474,4 +475,53 @@ body.dark-mode #tswheader.header-flex {
 /* Dark mode image adjustments */
 body.dark-mode #tswheader.header-flex .header-img {
   filter: brightness(0.9);
+}
+
+/* Mobile slide-in sidebar */
+@media (max-width: 768px) {
+
+  /* Sidebar hidden by default */
+  div#tswsidecol {
+    position: fixed;             /* float above content */
+    top: 110px;                  /* below header */
+    left: 0;                     /* start offscreen on the left */
+    transform: translateX(-100%); /* fully hidden left */
+    width: 220px;                /* fixed width */
+    height: auto;                /* height determined by content */
+    background-color: #fff;      /* box background */
+    border-radius: 0 12px 12px 0; /* rounded right corners only */
+    box-shadow: 4px 0 20px rgba(0,0,0,0.3); /* shadow for depth */
+    padding: 15px;               /* inner spacing */
+    z-index: 2000;               /* above content */
+    overflow-y: auto;            /* scroll if needed */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  /* When open: slide in from left */
+  div#tswsidecol.open {
+    transform: translateX(0);  /* fully visible */
+    opacity: 1;
+  }
+
+  /* Content full width when sidebar hidden */
+  div#tswcontent {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Toggle button */
+  #sidebarToggle {
+    position: fixed;
+    top: 110px;
+    left: 10px;
+    z-index: 2100;
+  }
+
+  /* Dark mode adjustments */
+  body.dark-mode div#tswsidecol {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+  }
 }
