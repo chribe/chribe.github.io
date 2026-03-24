@@ -26,7 +26,7 @@ div#tswheader {
   left: 0;
   width: 100%;
   z-index: 1000;
-  padding: 0;          /* remove extra height */
+  padding: 0;          
 }
 
 /* === Fixed Sidebar === */
@@ -80,52 +80,6 @@ div#tswfooter {
   margin-top: 20px;
   padding: 10px 0;
 }
-
-/* === Responsive Design === 
-@media only screen and (max-width: 629px) {
-  div#tswheader {
-    position: static;
-  }
-
-  div#tswsidecol {
-    position: static;
-    width: 100%;
-    height: auto;
-    overflow: visible;
-  }
-
-  div#tswcontent {
-    margin-top: 0;
-    margin-left: 0;
-    width: 100%;
-    float: none;
-  }
-}
-*/
-
-/* === horizontal line
-
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 2em 0;
-}
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  border-top: 2px dotted #000;
-  border-bottom: 2px dotted #000;
-  height: 6px; 
-}
-.divider:not(:empty)::before {
-  margin-right: 0.75em;
-}
-.divider:not(:empty)::after {
-  margin-left: 0.75em;
-}
-*/
 
 .divider {
   display: flex;
@@ -257,11 +211,6 @@ html.dark-mode,
   background-color: #121212;
 }
 
-/* Keep navigation links black in dark mode */
-body.dark-mode #tswcssbuttons a {
-  color: #000 !important;
-}
-
 
 /* Light mode header */
 #tswheader {
@@ -332,7 +281,7 @@ body.dark-mode #tswheader {
 /* Dark mode button styling */
 body.dark-mode #tswcssbuttons li a {
   background-color: #2c2c2c;
-  color: #000; /* keep text black as you requested */
+  color: #fff;
 }
 
 body.dark-mode #tswcssbuttons li a:hover {
@@ -525,4 +474,36 @@ body.dark-mode #tswheader.header-flex .header-img {
     color: #e0e0e0;
     box-shadow: 4px 0 20px rgba(0,0,0,0.5);
   }
+}
+
+
+.yearbtn {
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid #888;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.yearbtn:hover {
+  background-color: #cfcfcf;
+  transform: translateY(-2px);
+}
+
+body.dark-mode .yearbtn {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: 1px solid #0006b8;
+}
+
+body.dark-mode .yearbtn:hover {
+  background-color: #3a3a3a;
+}
+
+.yearbtn {
+  width: 80px;
+  text-align: center;
+  border-radius: 12px;
 }
