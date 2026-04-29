@@ -503,7 +503,18 @@ body.dark-mode .yearbtn:hover {
 }
 
 .yearbtn {
-  width: 80px;
+  min-width: 80px;
   text-align: center;
   border-radius: 12px;
+  padding: 4px 10px;   /* adds nice spacing inside */
+}
+
+.yearbtn.active {
+  background-color: #444;
+  color: white;
+}
+body.dark-mode .yearbtn.active {
+  background-color: #555;
+  color: #fff;
+  border: 1px solid #0000ff6b;
 }
