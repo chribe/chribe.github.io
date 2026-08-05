@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>LINXS LLPS2026 References</title>
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 3.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="../../styles.css">
+    <meta name="author" content="Christian Beck, PhD">
+    <link rel="stylesheet" type="text/css" href="../../tswnavbar.css" />
+  </head>
+  <body>
+    <div id="tswcontainer">
+      <div id="tswheader"></div>
+      <button id="sidebarToggle">☰ Menu</button>
+      <script>
+        // Load header content from external file
+        fetch('../../header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswheader').innerHTML = data;
+          })
+          .catch(error => console.error('Header failed to load:', error));
+      </script>
+      <div id="tswcontent">
+        <div id="tswcontproper">
+        <h1>LINXS LLPS2026</h1>
+        <p>
+            Presentation: 
+        </p>
+        <p>
+        References:
+        <ol>
+            <li>
+                ``Cation-Induced Hydration Effects Cause Lower Critical Solution Temperature Behavior in Protein Solutions''; O. Matsarskaia, M. K. Braun, F. Roosen-Runge, M. Wolf, F. Zhang, R. Roth, F. Schreiber; J. Phys. Chem. B (2016) 120 (31): 7731–7736. <a href="https://doi.org/10.1021/acs.jpcb.6b04506">doi.org/10.1021/acs.jpcb.6b04506</a>
+            </li>
+            <li>
+                ``Strong Isotope Effects on Effective Interactions and Phase Behavior in Protein Solutions in the Presence of Multivalent Ions''; M. K. Braun, M. Wolf, O. Matsarskaia, S. Da Vela, F. Roosen-Runge, M. Sztucki, R. Roth, F. Zhang, F. Schreiber;
+J. Phys. Chem. B (2017) 121 (7): 1731–1739. <a href="https://doi.org/10.1021/acs.jpcb.6b12814">doi.org/10.1021/acs.jpcb.6b12814</a>
+
+            </li>
+         </ol>
+         </p>
+        <div style="height: 500px;"></div>
+          <!-- end of content column: put your content above this line --> </div>
+      </div>
+      <div id="tswsidecol">
+        <div id="tswcssbuttons-placeholder"></div>
+
+        <script>
+        fetch('../../nav.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Navigation menu failed to load:', error));
+        </script>
+      </div>
+      <div style="clear: both;"></div>
+      <div id="tswfooter"></div>
+      <script>
+        // Load footer
+        fetch('../../footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswfooter').innerHTML = data;
+          })
+          .catch(error => console.error('Footer failed to load:', error));
+      </script>
+    </div>
+    <script>
+    function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied: " + text);
+    });
+    }
+    </script>
+    <script>
+      const translations = {
+        en: {
+          description: ``
+        },
+        fr: {
+          description: ``
+        },
+        es: {
+          description: ``
+        },
+        de: {
+          description: ``
+          }
+      };
+
+      function initLanguageSwitcher() {
+        const descEl  = document.getElementById("description");
+        const switcher = document.getElementById("languageSwitcher");
+
+        if (!descEl || !switcher) return;
+
+        function setLanguage(lang) {
+          descEl.innerHTML  = translations[lang].description;
+          localStorage.setItem("lang", lang); // remember choice
+          switcher.value = lang;
+        }
+
+        switcher.addEventListener("change", e => setLanguage(e.target.value));
+
+          // load saved language or fallback
+          const savedLang = localStorage.getItem("lang") || "en";
+          setLanguage(savedLang);
+        }
+
+        // load nav, then init
+        fetch('../../nav.html')
+          .then(r => r.text())
+          .then(data => {
+            document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+            initLanguageSwitcher();
+          })
+          .catch(error => console.error('Navigation menu failed to load:', error));
+    </script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/sidebar.js"></script>
+  </body>
+</html>
