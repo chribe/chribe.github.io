@@ -61,3 +61,17 @@ function waitForThemeToggle() {
 }
 
 window.addEventListener("load", waitForThemeToggle);
+
+
+// Cloudflare Web Analytics
+if (!document.querySelector('script[src="https://static.cloudflareinsights.com/beacon.min.js"]')) {
+    const cfScript = document.createElement("script");
+
+    cfScript.type = "module";
+    cfScript.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    cfScript.dataset.cfBeacon = JSON.stringify({
+        token: "ac57c6222b1e4e87a9bd199a1b7b8e55"
+    });
+
+    document.head.appendChild(cfScript);
+}
