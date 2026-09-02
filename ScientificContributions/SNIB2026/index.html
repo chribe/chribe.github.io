@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SNIB2026 References</title>
+    <meta name="generator" content="thesitewizard.com's Layout Wizard 3.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="../../styles.css">
+    <meta name="author" content="Christian Beck, PhD">
+    <link rel="stylesheet" type="text/css" href="../../tswnavbar.css" />
+  </head>
+  <body>
+    <div id="tswcontainer">
+      <div id="tswheader"></div>
+      <button id="sidebarToggle">☰ Menu</button>
+      <script>
+        // Load header content from external file
+        fetch('../../header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswheader').innerHTML = data;
+          })
+          .catch(error => console.error('Header failed to load:', error));
+      </script>
+      <div id="tswcontent">
+        <div id="tswcontproper">
+        <h1>SNIB2026</h1>
+        <p>
+            Presentation and Abstract: <a href="https://indico.desy.de/event/51551/contributions/208139/">https://indico.desy.de/event/51551/contributions/208139/</a> 
+        </p>
+        <p>
+        References:
+        <ol>
+          <li>EPJ Web of Conferences 188, 05001 (2018) <a href="https://doi.org/10.1051/epjconf/201818805001">doi.org/10.1051/epjconf/201818805001</a></li>
+          <li>Neutron Sources, Elsevir, 2005, <a href="https://doi.org/10.1016/B0-12-369401-9/00633-1">doi.org/10.1016/B0-12-369401-9/00633-1</a></li>
+          <li>Cryst. Growth Des. 2021, 21, 12, 6971–6980 <a href="https://doi.org/10.1021/acs.cgd.1c00908">doi.org/10.1021/acs.cgd.1c00908</a></li>
+          <li>ChemPhysChem 2020, 21, 1742. <a href="https://doi.org/10.1002/cphc.202000162">doi.org/10.1002/cphc.202000162</a></li>
+          <li>Cryst. Growth Des. 2019, 19, 12, 7036–7045, <a href="https://doi.org/10.1021/acs.cgd.9b00858">doi.org/10.1021/acs.cgd.9b00858</a></li>
+          <li>J. Appl. Cryst. (2025). 58, 845–858 <a href="https://doi.org/10.1107/S160057672500353X">doi.org/10.1107/S160057672500353X</a></li>
+          <li>Cryst. Growth Des. 2021, 21, 12, 6971–6980 <a href="https://doi.org/10.1021/acs.cgd.1c00908">doi.org/10.1021/acs.cgd.1c00908</a></li>
+          <li>Nat Commun 16, 10345 (2025). <a href="https://doi.org/10.1038/s41467-025-65270-5">doi.org/10.1038/s41467-025-65270-5</a> </li>
+          <li>Phys. Chem. Chem. Phys., 2015, 17, 4645-4655 <a href="https://doi.org/10.1039/C4CP04944F">doi.org/10.1039/C4CP04944F</a> </li>
+          <li>Phys. Chem. Chem. Phys., 2020, 22, 18507-18517 <a href="https://doi.org/10.1039/D0CP01857K">doi.org/10.1039/D0CP01857K</a> </li>
+        </ol>
+         </p>
+        <div style="height: 500px;"></div>
+          <!-- end of content column: put your content above this line --> </div>
+      </div>
+      <div id="tswsidecol">
+        <div id="tswcssbuttons-placeholder"></div>
+
+        <script>
+        fetch('../../nav.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Navigation menu failed to load:', error));
+        </script>
+      </div>
+      <div style="clear: both;"></div>
+      <div id="tswfooter"></div>
+      <script>
+        // Load footer
+        fetch('../../footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('tswfooter').innerHTML = data;
+          })
+          .catch(error => console.error('Footer failed to load:', error));
+      </script>
+    </div>
+    <script>
+    function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied: " + text);
+    });
+    }
+    </script>
+    <script>
+      const translations = {
+        en: {
+          description: ``
+        },
+        fr: {
+          description: ``
+        },
+        es: {
+          description: ``
+        },
+        de: {
+          description: ``
+          }
+      };
+
+      function initLanguageSwitcher() {
+        const descEl  = document.getElementById("description");
+        const switcher = document.getElementById("languageSwitcher");
+
+        if (!descEl || !switcher) return;
+
+        function setLanguage(lang) {
+          descEl.innerHTML  = translations[lang].description;
+          localStorage.setItem("lang", lang); // remember choice
+          switcher.value = lang;
+        }
+
+        switcher.addEventListener("change", e => setLanguage(e.target.value));
+
+          // load saved language or fallback
+          const savedLang = localStorage.getItem("lang") || "en";
+          setLanguage(savedLang);
+        }
+
+        // load nav, then init
+        fetch('../../nav.html')
+          .then(r => r.text())
+          .then(data => {
+            document.getElementById('tswcssbuttons-placeholder').innerHTML = data;
+            initLanguageSwitcher();
+          })
+          .catch(error => console.error('Navigation menu failed to load:', error));
+    </script>
+    <script src="../../js/theme.js"></script>
+    <script src="../../js/sidebar.js"></script>
+  </body>
+</html>
